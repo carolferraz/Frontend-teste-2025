@@ -1,0 +1,1149 @@
+{
+	"info": {
+		"_postman_id": "858e735a-1cab-43c8-805d-d8482258913d",
+		"name": "Evob Public",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24739941",
+		"_collection_link": "https://evob-team.postman.co/workspace/Team-Evob~44ab3ab0-e1b3-4cb8-8cf2-a6eaa7b099b8/collection/24739941-858e735a-1cab-43c8-805d-d8482258913d?action=share&source=collection_link&creator=24739941"
+	},
+	"item": [
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/brands/3",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"brands",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by Origin",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"type": "text",
+								"value": "{{ORIGIN}}"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/brand",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Slugs",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/slugs/:model",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"slugs",
+								":model"
+							],
+							"variable": [
+								{
+									"key": "model",
+									"value": "stores",
+									"description": "options: classrooms, stores, courses, landing_pages, categories"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Members",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJtZW1iZXJfaWQiOjQsInVzZXJfaWQiOjIsImVtYWlsIjoiYWRtaW5AZXZvYi5tZSJ9.0WUIEvSgAQCv27iEN2CqLplHiUrQZUwv49ZunZR1lSQ",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_MS}}/members?sort_column=created_at&sort_direction=desc",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "q[email_eq]",
+									"value": "email-teste@yahoo.com.br",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "12",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "sort_column",
+									"value": "created_at"
+								},
+								{
+									"key": "sort_direction",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Member",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_MS}}/members/170737",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"members",
+								"170737"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Banners",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/banners",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"banners"
+							],
+							"query": [
+								{
+									"key": "q[status_eq]",
+									"value": "all",
+									"description": "Informa o status dos banners que devem retornar. Opções: all, draft, pending, published, unpublished",
+									"disabled": true
+								},
+								{
+									"key": "q[type_eq]",
+									"value": "0",
+									"description": "Tipo de media do Banner. Opções: 0 = imagem, 1 = video",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_gteq]",
+									"value": "2021-10-01T00:00:00.000Z",
+									"description": "Data inicial da criação do Banner",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_lteq]",
+									"value": "2021-11-01T00:00:00.000Z",
+									"description": "Data final da criação do Banner",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Número da página a ser visualizada",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Número de items por página",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/stores/1",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"stores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/courses",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "q[visibility_eq]",
+									"value": "visible",
+									"disabled": true
+								},
+								{
+									"key": "q[title_or_teachers_name_i_cont_any]",
+									"value": "hair",
+									"disabled": true
+								},
+								{
+									"key": "q[has_free_offer_true]",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "q[id_in]",
+									"value": "145",
+									"disabled": true
+								},
+								{
+									"key": "q[featured_true]",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "sort_column",
+									"value": "featured_order",
+									"disabled": true
+								},
+								{
+									"key": "q[status_eq]",
+									"value": "published",
+									"disabled": true
+								},
+								{
+									"key": "q[lessons_content_jcont]",
+									"value": "{\"state\":\"RN\"}",
+									"disabled": true
+								},
+								{
+									"key": "q[lessons_lesson_type_eq]",
+									"value": "in_person",
+									"description": "in_person",
+									"disabled": true
+								},
+								{
+									"key": "q[id_eq]",
+									"value": "135",
+									"disabled": true
+								},
+								{
+									"key": "course_type",
+									"value": "online",
+									"description": "live | presential | online",
+									"disabled": true
+								},
+								{
+									"key": "store_jcont",
+									"value": "{store->id:15}",
+									"disabled": true
+								},
+								{
+									"key": "q[store_id_eq]",
+									"value": "69",
+									"disabled": true
+								},
+								{
+									"key": "q[settings_jcont]",
+									"value": "{\"highlight_banner\":true}",
+									"disabled": true
+								},
+								{
+									"key": "sort_direction",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "q[settings_jcont]",
+									"value": "{%22highlight_banner%22:true}",
+									"disabled": true
+								},
+								{
+									"key": "featured",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "sort_column",
+									"value": "created_at",
+									"disabled": true
+								},
+								{
+									"key": "q[title_i_cont_any]",
+									"value": "penteado",
+									"disabled": true
+								},
+								{
+									"key": "q[teachers_name_cont_any]",
+									"value": "Romeu",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "order_by_store_id",
+									"value": "14",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "q[has_free_offer_false]",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "search_string",
+									"value": "cabelos,corte",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_gteq]",
+									"value": "2021-10-01T00:00:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_lteq]",
+									"value": "2021-11-01T00:00:00.000Z",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/courses/colorista-master",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"courses",
+								"colorista-master"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Classrooms",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/courses/281/classrooms",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"courses",
+								"281",
+								"classrooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BS}}/courses/:id_course/orders",
+							"host": [
+								"{{URL_BS}}"
+							],
+							"path": [
+								"courses",
+								":id_course",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "300",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_gteq]",
+									"value": "2022-05-18T00:00:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "q[created_at_lteq]",
+									"value": "2023-05-25T23:59:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "q[status_in][]",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sort_column",
+									"value": "coupon",
+									"description": "buyer_name,classroom.coupon",
+									"disabled": true
+								},
+								{
+									"key": "sort_direction",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "count_only",
+									"value": "true",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id_course",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL_BS}}/orders/255",
+							"host": [
+								"{{URL_BS}}"
+							],
+							"path": [
+								"orders",
+								"255"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offer",
+			"item": [
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_BS}}/offers/1529",
+							"host": [
+								"{{URL_BS}}"
+							],
+							"path": [
+								"offers",
+								"1529"
+							],
+							"query": [
+								{
+									"key": "qty",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "coupon_code",
+									"value": "123",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var response = pm.response.json()",
+									"    var token = response.token",
+									"",
+									"    pm.environment.set(\"TOKEN\", token)",
+									"} else {",
+									"    console.log(\"Could not set the token.\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member\": {\n        \"email\": \"{{EMAIL}}\",\n        \"password\": \"{{PASSWORD}}\",\n        \"brand_id\": {{BRAND}}\n    }\n}"
+						},
+						"url": {
+							"raw": "{{URL_MS}}/login",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"expire_all\":true // false\n}"
+						},
+						"url": {
+							"raw": "{{URL_MS}}/logout",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"emerson+dev_brand3@evob.com.br\",\n    \"brand_id\": 3   \n}"
+						},
+						"url": {
+							"raw": "{{URL_MS}}/forgot_password",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"forgot_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Identity",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJtZW1iZXJfaWQiOjQsInVzZXJfaWQiOjIsImVtYWlsIjoiYWRtaW5AZXZvYi5tZSJ9.0WUIEvSgAQCv27iEN2CqLplHiUrQZUwv49ZunZR1lSQ",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Origin",
+								"value": "http://beta.admin.wellaedu.com.br",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_MS}}/members/identify",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"members",
+								"identify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "https://wellaedu.com.br",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_MS}}/members/me",
+							"host": [
+								"{{URL_MS}}"
+							],
+							"path": [
+								"members",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/members/me/courses",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"members",
+								"me",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Certificates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_CS}}/members/me/certificates",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"members",
+								"me",
+								"certificates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "{{ORIGIN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{URL_CS}}/notes",
+							"host": [
+								"{{URL_CS}}"
+							],
+							"path": [
+								"notes"
+							],
+							"query": [
+								{
+									"key": "lesson_id",
+									"value": "2628",
+									"description": "filter_by lesson",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
