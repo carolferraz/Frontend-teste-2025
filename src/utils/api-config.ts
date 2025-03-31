@@ -1,0 +1,7 @@
+export const API_CONFIG = {
+  CONTENT_SERVICE: process.env.NEXT_PUBLIC_URL_CS,
+  BILLING_SERVICE: process.env.NEXT_PUBLIC_URL_BS,
+  MEMBER_SERVICE: process.env.NEXT_PUBLIC_URL_MS,
+  ORIGIN: process.env.NEXT_PUBLIC_ORIGIN,
+  BRAND: process.env.NEXT_PUBLIC_BRAND,
+}
