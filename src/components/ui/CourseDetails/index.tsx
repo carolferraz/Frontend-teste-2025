@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { courseService, TCourse } from '@/services/course-service'
+import { courseService } from '@/services/course-service'
+import { TCourse } from '@/types/course'
 import Loader from '../Loader'
 import { Share2 } from 'lucide-react'
 import { DocumentCopy, Whatsapp } from 'iconsax-react'

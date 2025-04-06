@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   try {
-    const response = await fetch(`${API_CONFIG.CONTENT_SERVICE}/courses`, {
+    const response = await fetch(`${API_CONFIG.CONTENT_SERVICE}/courses?per_page=20`, {
       headers: {
         'Content-Type': 'application/json',
         Origin: 'http://localhost:3024',

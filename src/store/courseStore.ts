@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import { TCourse } from '@/services/course-service'
 import { TBanner } from '@/types/banner'
+import { TCourse } from '@/types/course'
 import { courseService } from '@/services/course-service'
 import { bannerService } from '@/services/banner-service'
 
@@ -38,7 +38,7 @@ export const useCourseStore = create<CourseStore>((set, get) => ({
       }
 
       const [coursesResult, bannersResult] = await Promise.all([
-        courseService.listCourses(),
+        courseService.listCourses({ per_page: 20 }),
         bannerService.listBanners(),
       ])
 

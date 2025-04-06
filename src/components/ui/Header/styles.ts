@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
 
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {
     height: 3.75rem;
-    padding: 0 ${props => props.theme.spacing.lg};
+    padding: 0 ${props => props.theme.spacing.xxl};
   }
 `
 
