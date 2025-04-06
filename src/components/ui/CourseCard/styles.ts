@@ -5,19 +5,19 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 315px;
-  height: 353px;
+  width: 19.6875rem;
+  height: 22.0625rem;
   overflow: hidden;
   background-color: ${props => props.theme.colors.light};
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
   }
 
   @media (min-width: 760.5rem) {
-    width: 315px;
-    height: 353px;
+    width: 19.6875rem;
+    height: 22.0625rem;
   }
 `
 
@@ -33,19 +33,39 @@ export const FavoriteButton = styled.button`
   position: absolute;
   top: 0.625rem;
   right: 0.625rem;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem; /* 36px */
+  height: 2.25rem; /* 36px */
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: ${props => props.theme.colors.smoke};
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  z-index: 1;
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background-color: ${props => props.theme.colors.smoke};
+    }
+    50% {
+      transform: scale(1.15);
+      background-color: #e33f52d4;
+    }
+    100% {
+      transform: scale(1);
+      background-color: ${props => props.theme.colors.smoke};
+    }
+  }
+
+  &:active {
+    animation: pulse 0.3s ease;
+  }
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: ${props => props.theme.colors.smoke};
   }
 `
 

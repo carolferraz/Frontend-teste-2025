@@ -15,11 +15,14 @@ import {
   LoginButtonMobile,
   MenuContainer,
 } from './styles'
-import { UserRound, LogIn, Menu } from 'lucide-react'
+import { LogIn, Menu } from 'lucide-react'
+import { User } from 'iconsax-react'
 import { THeaderProps } from './types'
 import ButtonComponent from '../Button'
-
+import { useTheme } from 'styled-components'
+import Link from 'next/link'
 export default function Header({ onSearch, onLogin, onRegister }: THeaderProps) {
+  const theme = useTheme()
   const [searchQuery, setSearchQuery] = useState('')
 
   const handleSearch = (e: React.FormEvent) => {
@@ -51,13 +54,15 @@ export default function Header({ onSearch, onLogin, onRegister }: THeaderProps) 
           </SearchContainer>
         </MenuContainer>
 
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
 
         <AuthButtons>
           <RegisterButtonWrapper>
             <ButtonComponent
               variant="secondary"
-              icon={<UserRound size={20} />}
+              icon={<User size={20} variant="Linear" color={theme.colors.primary} />}
               coloredicon
               onClick={onLogin}
             >

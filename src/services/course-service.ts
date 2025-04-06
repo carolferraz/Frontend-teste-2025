@@ -59,23 +59,24 @@ export const courseService = {
     }
   },
 
-  getCourse: (slugOrId: string | number): Promise<TCourse> => {
+  getCourse: (slug: string): Promise<TCourse> => {
     if (isClient) {
-      return fetch(`/api/courses/${slugOrId}`, {
+      return fetch(`/api/courses/${slug}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
-      }).then(response => {
+      }).then(async response => {
         if (!response.ok) {
-          return response.json().then(error => {
+          return response.json().catch(error => {
             throw new Error(`API error: ${response.status} - ${error.message || 'Unknown error'}`)
           })
         }
-        return response.json()
+        const data = await response.json()
+        return data
       })
     } else {
-      return apiClient.get<TCourse>(`${API_CONFIG.CONTENT_SERVICE}/courses/${slugOrId}`)
+      return apiClient.get<TCourse>(`${API_CONFIG.CONTENT_SERVICE}/courses/${slug}`)
     }
   },
 }

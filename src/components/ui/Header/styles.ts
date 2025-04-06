@@ -5,11 +5,11 @@ import { Search } from 'lucide-react'
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  height: 56px;
+  height: 3.5rem;
   padding: 0 ${props => props.theme.spacing.sm};
 
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {
-    height: 60px;
+    height: 3.75rem;
     padding: 0 ${props => props.theme.spacing.lg};
   }
 `
@@ -38,7 +38,7 @@ export const SearchContainer = styled.div`
 
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {
     gap: ${props => props.theme.spacing.sm};
-    max-width: 265px;
+    max-width: 16rem;
     margin-right: ${props => props.theme.spacing.lg};
     flex: 1;
   }
@@ -50,29 +50,25 @@ export const SearchInput = styled.input`
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {
     display: block;
     width: 100%;
-    height: 36px;
+    height: 2.25rem;
     padding: 0 ${props => props.theme.spacing.sm};
-    border: 1px solid var(--gray-alpha-200);
+    border: none;
     border-radius: ${props => props.theme.borderRadius.pill};
     background: transparent;
-    color: var(--foreground);
+    color: ${props => props.theme.text};
     font-size: ${props => props.theme.fontSizes.medium};
 
     &:focus {
       outline: none;
-      border-color: var(--foreground);
-    }
-
-    &::placeholder {
-      color: var(--gray-alpha-200);
+      border-color: ${props => props.theme.text};
     }
   }
 `
 
 export const SearchIcon = styled(Search)`
   color: ${props => props.theme.colors.primary};
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 `
 
 export const AuthButtons = styled.div`
@@ -89,7 +85,7 @@ export const Logo = styled.img.attrs({
   src: '/Logo.svg',
   alt: 'Logo',
 })`
-  height: 20px;
+  height: 1.25rem;
   width: auto;
   position: absolute;
   left: 50%;
@@ -99,7 +95,7 @@ export const Logo = styled.img.attrs({
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {
     position: static;
     transform: none;
-    height: 30px;
+    height: 1.875rem;
     margin-right: ${props => props.theme.spacing.xl};
   }
 `
@@ -108,8 +104,8 @@ export const MenuIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   color: ${props => props.theme.colors.primary};
 
   @media (min-width: ${props => props.theme.breakpoints.mobile}) {

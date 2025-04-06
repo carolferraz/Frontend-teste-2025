@@ -1,20 +1,19 @@
 const theme = {
   colors: {
     primary: '#792BF9',
-    primaryLight: '#843afc',
+    primaryLight: '#792BF980',
     secondary: '#6c757d',
     danger: '#E33F52',
     gray: '#383838',
     grayLight: '#666666',
+    grayDetail: '#E4E0E0',
     dark: '#262525',
     light: '#ffffff',
     black: '#000000',
-    background: {
-      light: '#F1F4FB',
-    },
-    text: {
-      light: '#252525',
-    },
+    smoke: '#0000004d',
+    whatsapp: '#2B932F',
+    background: '#F1F4FB',
+    text: '#252525',
   },
   fonts: {
     body: 'Inter, system-ui, -apple-system, sans-serif',

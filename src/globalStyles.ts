@@ -11,8 +11,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: var(--foreground);
-    background: ${theme.colors.background.light};
+    color: ${theme.colors.text};
+    background: ${theme.colors.background};
     font-family: ${theme.fonts.body};
   }
 

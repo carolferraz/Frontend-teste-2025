@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Heart } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { Heart } from 'iconsax-react'
 import ButtonComponent from '../Button'
 import {
   CardContainer,
@@ -23,8 +24,8 @@ export type TCourseCardProps = {
   imageUrl: string
   isOnline?: boolean
   isFavorite?: boolean
+  slug: string
   onFavorite?: (id: string) => void
-  onAccess?: (id: string) => void
 }
 
 export default function CourseCard({
@@ -34,22 +35,24 @@ export default function CourseCard({
   imageUrl,
   isOnline = true,
   isFavorite = false,
+  slug,
   onFavorite,
-  onAccess,
 }: TCourseCardProps) {
+  const router = useRouter()
+
   const handleFavorite = () => {
     if (onFavorite) onFavorite(id)
   }
 
   const handleAccess = () => {
-    if (onAccess) onAccess(id)
+    router.push(`/courses/${slug}`)
   }
 
   return (
     <CardContainer>
       <CardImage $imageUrl={imageUrl}>
         <FavoriteButton onClick={handleFavorite}>
-          <Heart fill={isFavorite ? 'white' : 'none'} color="white" size={20} />
+          <Heart variant={isFavorite ? 'Bold' : 'Linear'} color="white" size={20} />
         </FavoriteButton>
         {isOnline && (
           <BadgeContainer>

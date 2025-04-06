@@ -1,35 +1,33 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import CourseCard from '../CourseCard'
-import { TCourse } from '@/services/course-service'
 import { CoursesContainer, CoursesTitle, CoursesWrapper } from './styles'
+import { useCourseStore } from '@/store/courseStore'
+import Loader from '../Loader'
 
-type CoursesListProps = {
-  courses: TCourse[]
-}
+export default function CoursesList() {
+  const { courses, toggleFavorite, favoriteIds, initialize, loading } = useCourseStore()
 
-export default function CoursesList({ courses }: CoursesListProps) {
-  const handleAccess = (id: string) => {
-    console.log(`Id do curso: ${id}`)
-    // TODO: Implementar a lógica para acessar a página do curso
-  }
+  // Inicializa a store ao montar o componente
+  useEffect(() => {
+    initialize()
+  }, [initialize])
 
   const handleFavorite = (id: string) => {
-    const storedFavorites = localStorage.getItem('favoriteCourses')
-    let favorites: string[] = storedFavorites ? JSON.parse(storedFavorites) : []
+    toggleFavorite(id)
+  }
 
-    const isFavorite = favorites.includes(id)
+  if (loading && courses.length === 0) {
+    return (
+      <>
+        <Loader />
+      </>
+    )
+  }
 
-    if (isFavorite) {
-      favorites = favorites.filter(favoriteId => favoriteId !== id)
-    } else {
-      favorites.push(id)
-    }
-
-    localStorage.setItem('favoriteCourses', JSON.stringify(favorites))
-
-    console.log(`Curso ${id} ${isFavorite ? 'removido dos' : 'adicionado aos'} favoritos`)
+  if (!courses || courses.length === 0) {
+    return null
   }
 
   return (
@@ -42,13 +40,12 @@ export default function CoursesList({ courses }: CoursesListProps) {
             id={String(course.id)}
             title={course.title}
             instructor={
-              course.teachers && course.teachers.length > 0
-                ? course.teachers[0]?.name || 'Instrutor'
-                : 'Instrutor'
+              course.teachers && course.teachers.length > 0 ? course.teachers[0]?.name || '' : ''
             }
             imageUrl={course.thumbnail}
             isOnline={true}
-            onAccess={handleAccess}
+            isFavorite={favoriteIds.includes(String(course.id))}
+            slug={course.slug}
             onFavorite={handleFavorite}
           />
         ))}

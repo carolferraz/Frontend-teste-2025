@@ -12,8 +12,6 @@ export const BannerImage = styled.div<{ imageurl: string }>`
   width: 100%;
   height: 300px;
   background-image: url(${props => props.imageurl});
-  background-size: cover;
-  background-position: center;
 
   @media (min-width: 760.5rem) {
     height: 400px;
@@ -28,7 +26,7 @@ export const BannerContent = styled.div`
   left: 0;
   padding: 2.5rem 1.25rem;
   color: white;
-  background: #00000059;
+  background: ${props => props.theme.colors.smoke};
   display: flex;
   flex-direction: column;
   align-items: flex-start;

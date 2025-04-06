@@ -34,7 +34,6 @@ export const Button = styled.button<TButtonProps>`
   ${props =>
     props.variant === 'secondary' &&
     css`
-      border: 1px solid var(--gray-alpha-200);
       background: transparent;
       gap: 0.5rem;
       white-space: nowrap;
@@ -57,7 +56,7 @@ export const Button = styled.button<TButtonProps>`
       }
     `}
 
-  @media (min-width: 760.5rem) {
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0.5rem 1.25rem;
     font-size: 1rem;
   }
