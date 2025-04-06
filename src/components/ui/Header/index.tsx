@@ -8,6 +8,7 @@ import {
   SearchInput,
   SearchIcon,
   AuthButtons,
+  LogoLink,
   Logo,
   MenuIcon,
   RegisterButtonWrapper,
@@ -20,7 +21,7 @@ import { User } from 'iconsax-react'
 import { THeaderProps } from './types'
 import ButtonComponent from '../Button'
 import { useTheme } from 'styled-components'
-import Link from 'next/link'
+
 export default function Header({ onSearch, onLogin, onRegister }: THeaderProps) {
   const theme = useTheme()
   const [searchQuery, setSearchQuery] = useState('')
@@ -54,9 +55,9 @@ export default function Header({ onSearch, onLogin, onRegister }: THeaderProps) 
           </SearchContainer>
         </MenuContainer>
 
-        <Link href="/">
+        <LogoLink href="/">
           <Logo />
-        </Link>
+        </LogoLink>
 
         <AuthButtons>
           <RegisterButtonWrapper>

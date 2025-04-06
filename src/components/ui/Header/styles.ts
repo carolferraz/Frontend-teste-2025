@@ -80,6 +80,10 @@ export const AuthButtons = styled.div`
     gap: ${props => props.theme.spacing.sm};
   }
 `
+export const LogoLink = styled.a`
+  display: flex;
+  align-items: center;
+`
 
 export const Logo = styled.img.attrs({
   src: '/Logo.svg',
