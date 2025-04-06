@@ -1,36 +1,100 @@
-## Importante
+# Plataforma de Cursos
 
-- Os projetos serão analisados pela ordem de entrega.
-- Candidatos que plagiarem serão desqualificados.
-- Projetos que não seguirem as instruções de entrega não serão analisados.
+Este é o frontend da aplicação desenvolvida como parte de um desafio técnico, com o objetivo de criar uma solução funcional e responsiva para exibição e gerenciamento de cursos. A aplicação utiliza **Next.js** com **TypeScript** e segue uma abordagem *mobile-first*, garantindo uma experiência otimizada em dispositivos móveis.
 
-## Instruções
+[🎥 Clique aqui para assistir ao vídeo de apresentação do projeto](https://youtu.be/Y-2ZI3u372w)
 
-1. Crie um novo projeto Next.js com TypeScript.
-2. Utilize a origin `http://localhost:3024` para consumo dos dados da API.
-3. Faça commits claros e semânticos.
-4. Replique o layout presente no link fornecido [aqui](https://www.figma.com/design/5hZQc5whUDeK8VL40WUCKl/teste-tecnico?node-id=0-1&node-type=canvas&m=dev).
-5. Desenvolva o layout com abordagem mobile-first.
-6. Implemente duas rotas:
-   - **Rota inicial com banner, listagem de cursos e favoritos.**
-     - As informações de banner e listagem de cursos não podem ser mockadas.
-   - **Rota para um curso específico usando slug.**
-     - Cada rota de curso deve ter um banner e uma descrição dinâmicos baseados nos dados do curso (não usar dados mockados).
-     - Na página do curso, implemente um botão flutuante que abre um modal para compartilhar o curso (API do WhatsApp - [https://api.whatsapp.com/send?text=](https://api.whatsapp.com/send?text=)).
-     - A ação de favoritar deve salvar as informações no `localStorage` para serem exibidas na rota inicial.
-     - Permita que o usuário desmarque um curso como favorito, removendo-o da lista de favoritos e do `localStorage`.
-     - Redirecione para uma página 404 se a slug do curso não for válida.
-7. Não utilizar bibliotecas de componentes pré-fabricados como, Material UI, Shadcn, etc.
+![image](https://github.com/user-attachments/assets/98638c6d-3ee8-4b53-824a-e98ff524a7f7)
 
-## Bônus
+![image](https://github.com/user-attachments/assets/a8587caf-a88f-4c21-80b3-b47a46f86c88)
 
-- Usar styled-components.
-- Testes.
-- Faça o deploy da solução em uma hospedagem gratuita, como a Vercel, e adicione o link no README do projeto.
-- Implemente novas funcionalidades, se achar pertinente.
-- Grave um vídeo de até 5 minutos e adicione o link no README explicando a implementação e os desafios superados.
+![image](https://github.com/user-attachments/assets/0ba3d23c-e917-48b6-8ca0-4c6a52f63ef3)
 
-## Como entregar o projeto
+![image](https://github.com/user-attachments/assets/6a0a6742-ee33-4ad6-ab2c-960929b63c6a)
+
+![image](https://github.com/user-attachments/assets/d6e15743-863d-4fe5-a740-0a29b8945195)
+
+![image](https://github.com/user-attachments/assets/9c09dfdd-f206-499d-922d-113ea088203b)
+
+
+---
+
+## ℹ️ Sobre o Projeto
+
+O projeto foi desenvolvido com base nas instruções fornecidas no desafio técnico, que incluíam a criação de um layout específico, implementação de rotas dinâmicas, consumo de API, e funcionalidades como favoritos salvos no *localStorage*.
+
+## ✅ Features
+
+- Listagem dinâmica de cursos consumida diretamente da API.
+- Favoritar/desfavoritar cursos com armazenamento local.
+- Compartilhamento de cursos via WhatsApp.
+- Redirecionamento automático para página 404 em caso de URL inválida.
+
+---
+
+## 📚 Como Executar
+
+Para visualizar este projeto localmente, siga os passos abaixo:
+
+1. Certifique-se de ter o Git instalado em seu computador.
+2. Crie uma pasta no seu computador e abra o terminal dentro dela.
+3. Execute o comando:
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+text
+4. Navegue até a pasta do projeto:
+cd nome-do-repositorio
+
+text
+5. Instale as dependências:
+npm install
+
+text
+6. Inicie o servidor local:
+npm run dev
+
+text
+7. Acesse a aplicação no navegador através do endereço:
+http://localhost:3000
+
+text
+8. Certifique-se de que a API esteja rodando na porta `http://localhost:3024` para o funcionamento completo do projeto.
+
+### **Link do Deploy**
+A aplicação está hospedada na Vercel e pode ser acessada pelo seguinte link: [Plataforma de Cursos](#).
+
+---
+
+## 🔨 Stack
+
+Ferramentas utilizadas no desenvolvimento:
+
+- **React**
+- **Next.js**
+- **TypeScript**
+- **Styled-components**
+
+---
+
+## 💡 Contribuindo
+
+Sinta-se à vontade para sugerir melhorias ou contribuir com o projeto! Para isso:
 
 1. Faça um fork deste repositório.
-2. Após finalizar, crie uma pull request no repositório original com sua solução.
+2. Crie uma nova branch com sua funcionalidade ou correção:
+git checkout -b minha-nova-feature
+
+text
+3. Faça os commits das suas alterações:
+git commit -m "feat: descrição clara da alteração"
+
+text
+4. Envie as alterações para sua branch remota:
+git push origin minha-nova-feature
+
+text
+5. Abra uma *Pull Request* no repositório original.
+
+---
+
+Desenvolvido com 💙 por Carol Ferraz
