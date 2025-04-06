@@ -5,7 +5,6 @@ import { courseService } from '@/services/course-service'
 import { bannerService } from '@/services/banner-service'
 
 interface CourseStore {
-  // Estado
   courses: TCourse[]
   banners: TBanner[]
   loading: boolean
@@ -13,7 +12,6 @@ interface CourseStore {
   error: string | null
   favoriteIds: string[]
 
-  // Ações
   initialize: () => Promise<void>
   toggleFavorite: (courseId: string) => void
   getFavoriteCourses: () => TCourse[]
@@ -28,20 +26,17 @@ export const useCourseStore = create<CourseStore>((set, get) => ({
   favoriteIds: [],
 
   initialize: async () => {
-    // Só inicializa uma vez
     if (get().initialized) return
 
     try {
       set({ loading: true, error: null })
 
-      // Carrega favoritos do localStorage
       if (typeof window !== 'undefined') {
         const storedFavorites = localStorage.getItem('favoriteCourses')
         const favoriteIds = storedFavorites ? JSON.parse(storedFavorites) : []
         set({ favoriteIds })
       }
 
-      // Busca dados em paralelo
       const [coursesResult, bannersResult] = await Promise.all([
         courseService.listCourses(),
         bannerService.listBanners(),

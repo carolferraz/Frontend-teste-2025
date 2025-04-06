@@ -22,8 +22,6 @@ export default function Footer() {
 
   const handleLanguageChange = (language: Language) => {
     setActiveLanguage(language)
-    // Here you would typically handle language change in your app
-    // For example, using i18n library or context
   }
 
   return (

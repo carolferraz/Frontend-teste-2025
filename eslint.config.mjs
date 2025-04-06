@@ -16,7 +16,6 @@ const eslintConfig = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.mjs'],
     rules: {
-      // Suas regras personalizadas aqui
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'no-unused-vars': 'warn',

@@ -9,7 +9,6 @@ import Loader from '../Loader'
 export default function CoursesList() {
   const { courses, toggleFavorite, favoriteIds, initialize, loading } = useCourseStore()
 
-  // Inicializa a store ao montar o componente
   useEffect(() => {
     initialize()
   }, [initialize])

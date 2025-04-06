@@ -5,19 +5,19 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 19.6875rem;
-  height: 22.0625rem;
+  width: 315px;
+  height: 353px;
   overflow: hidden;
   background-color: ${props => props.theme.colors.light};
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-0.3125rem);
+    transform: translateY(-5px);
   }
 
   @media (min-width: 760.5rem) {
-    width: 19.6875rem;
-    height: 22.0625rem;
+    width: 315px;
+    height: 353px;
   }
 `
 
@@ -33,8 +33,8 @@ export const FavoriteButton = styled.button`
   position: absolute;
   top: 0.625rem;
   right: 0.625rem;
-  width: 2.25rem; /* 36px */
-  height: 2.25rem; /* 36px */
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: ${props => props.theme.colors.smoke};
   border: none;
